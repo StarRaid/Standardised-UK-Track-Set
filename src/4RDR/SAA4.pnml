@@ -57,7 +57,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SAA4, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SAA4, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SAA4, fence_number < 1){
 	1 : gfx_fences_SAA4 ;
 	gfx_blank ;
 }

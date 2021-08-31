@@ -198,13 +198,81 @@ if(toggle_limits == 0){
 
 if(extra_tracks < 1){
 	
+	item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SGAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SHAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SGAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+
+
+if(decor_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_BLST) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_BLS2) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_BLS3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+
+
+if(extra_tracks < 2){
+	
 	item(FEAT_RAILTYPES, rail_SBA3) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFA3) {
+	item(FEAT_RAILTYPES, rail_SEA3) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -222,7 +290,7 @@ if(extra_tracks < 1){
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFAE) {
+	item(FEAT_RAILTYPES, rail_SEAE) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -234,7 +302,7 @@ if(extra_tracks < 1){
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFAN) {
+	item(FEAT_RAILTYPES, rail_SEAN) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -242,13 +310,13 @@ if(extra_tracks < 1){
 	
 	item(FEAT_RAILTYPES, rail_SBA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }
 
 
-if(extra_tracks < 2){
+if(extra_tracks < 3){
 	
 	item(FEAT_RAILTYPES, rail_SAA3) {
 	property {
@@ -321,13 +389,13 @@ if(extra_tracks < 2){
 	
 	item(FEAT_RAILTYPES, rail_SAA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 	
 	item(FEAT_RAILTYPES, rail_SCA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }

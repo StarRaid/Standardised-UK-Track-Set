@@ -8,11 +8,12 @@ STR_PARAM_SPEEDLIMITS_NAME			:Speed limits
 STR_PARAM_SPEEDLIMITS_DESC			:Turn on track speed limits.
 
 STR_PARAM_TRACK_LIST_NAME			:Track selection
-STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes
+STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes. Set to "One track type" to have one track type per electrification (like in vanilla). Recommended to have speed limits on if set to anything other than "One track type"
 
 STR_PARAM_TRACK_WIDE_BALLAST_NAME	:Wide ballast
 STR_PARAM_TRACK_WIDE_BALLAST_DESC	:Enable full tile ballast graphics.
 
+STR_PARAM_TRACK_ONE					:One track type
 STR_PARAM_TRACK_MIN					:Minimal selection
 STR_PARAM_TRACK_STANDARD			:Standard selection
 STR_PARAM_TRACK_EXTRA				:Extra selection

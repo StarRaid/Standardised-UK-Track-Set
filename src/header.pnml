@@ -2,7 +2,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 14 ;
+	version: 16 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -10,7 +10,7 @@ grf{
 			name    : string(STR_PARAM_SPEEDLIMITS_NAME) ;
 			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
 			bit     : 1 ;
-			def_value : 1 ;
+			def_value : 0 ;
 		}
 		wide_ballast{
 			type    : bool ;
@@ -136,12 +136,13 @@ grf{
 			name    : string(STR_PARAM_TRACK_LIST_NAME) ;
 			desc    : string(STR_PARAM_TRACK_LIST_DESC) ;
 			min_value	: 0 ;
-			max_value	: 2 ;
-			def_value	: 1 ;
+			max_value	: 3 ;
+			def_value	: 0 ;
 			names		: {
-				0	: string(STR_PARAM_TRACK_MIN ) ;
-				1	: string(STR_PARAM_TRACK_STANDARD ) ;
-				2	: string(STR_PARAM_TRACK_EXTRA ) ;
+				0	: string(STR_PARAM_TRACK_ONE ) ;
+				1	: string(STR_PARAM_TRACK_MIN ) ;
+				2	: string(STR_PARAM_TRACK_STANDARD ) ;
+				3	: string(STR_PARAM_TRACK_EXTRA ) ;
 			} ;
 		}
 	}

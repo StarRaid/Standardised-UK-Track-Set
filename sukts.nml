@@ -559,7 +559,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 14 ;
+	version: 15 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -567,7 +567,7 @@ grf{
 			name    : string(STR_PARAM_SPEEDLIMITS_NAME) ;
 			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
 			bit     : 1 ;
-			def_value : 1 ;
+			def_value : 0 ;
 		}
 		wide_ballast{
 			type    : bool ;
@@ -693,12 +693,13 @@ grf{
 			name    : string(STR_PARAM_TRACK_LIST_NAME) ;
 			desc    : string(STR_PARAM_TRACK_LIST_DESC) ;
 			min_value	: 0 ;
-			max_value	: 2 ;
-			def_value	: 1 ;
+			max_value	: 3 ;
+			def_value	: 0 ;
 			names		: {
-				0	: string(STR_PARAM_TRACK_MIN ) ;
-				1	: string(STR_PARAM_TRACK_STANDARD ) ;
-				2	: string(STR_PARAM_TRACK_EXTRA ) ;
+				0	: string(STR_PARAM_TRACK_ONE ) ;
+				1	: string(STR_PARAM_TRACK_MIN ) ;
+				2	: string(STR_PARAM_TRACK_STANDARD ) ;
+				3	: string(STR_PARAM_TRACK_EXTRA ) ;
 			} ;
 		}
 	}
@@ -1529,7 +1530,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SAAN, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SAAN, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SAAN, fence_number < 1){
 	1 : gfx_fences_SAAN ;
 	gfx_blank ;
 }
@@ -1665,7 +1666,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SBAN, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SBAN, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SBAN, fence_number < 1){
 	1 : gfx_fences_SBAN ;
 	gfx_blank ;
 }
@@ -2345,7 +2346,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SGAN, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SGAN, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SGAN, fence_number < 3){
 	1 : gfx_fences_SGAN ;
 	gfx_blank ;
 }
@@ -2482,7 +2483,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SHAE, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SHAE, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SHAE, fence_number < 3){
 	1 : gfx_fences_SHAE ;
 	gfx_blank ;
 }
@@ -2695,7 +2696,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SAA3, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SAA3, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SAA3, fence_number < 1){
 	1 : gfx_fences_SAA3 ;
 	gfx_blank ;
 }
@@ -2832,7 +2833,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SBA3, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SBA3, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SBA3, fence_number < 1){
 	1 : gfx_fences_SBA3 ;
 	gfx_blank ;
 }
@@ -3457,7 +3458,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SAA4, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SAA4, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SAA4, fence_number < 1){
 	1 : gfx_fences_SAA4 ;
 	gfx_blank ;
 }
@@ -3563,7 +3564,7 @@ switch(FEAT_RAILTYPES, SELF, sw_depot_SBA4, depot_type){
 
 // Fences?
 
-switch(FEAT_RAILTYPES, SELF, sw_fences_SBA4, fence_number < 2){
+switch(FEAT_RAILTYPES, SELF, sw_fences_SBA4, fence_number < 1){
 	1 : gfx_fences_SBA4 ;
 	gfx_blank ;
 }
@@ -4025,13 +4026,81 @@ if(toggle_limits == 0){
 
 if(extra_tracks < 1){
 	
+	item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SGAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SHAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SGAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+
+
+if(decor_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_BLST) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_BLS2) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_BLS3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+
+
+if(extra_tracks < 2){
+	
 	item(FEAT_RAILTYPES, rail_SBA3) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFA3) {
+	item(FEAT_RAILTYPES, rail_SEA3) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -4049,7 +4118,7 @@ if(extra_tracks < 1){
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFAE) {
+	item(FEAT_RAILTYPES, rail_SEAE) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -4061,7 +4130,7 @@ if(extra_tracks < 1){
 	}
 	}
 	
-	item(FEAT_RAILTYPES, rail_SFAN) {
+	item(FEAT_RAILTYPES, rail_SEAN) {
 	property {
 		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
@@ -4069,13 +4138,13 @@ if(extra_tracks < 1){
 	
 	item(FEAT_RAILTYPES, rail_SBA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }
 
 
-if(extra_tracks < 2){
+if(extra_tracks < 3){
 	
 	item(FEAT_RAILTYPES, rail_SAA3) {
 	property {
@@ -4148,13 +4217,13 @@ if(extra_tracks < 2){
 	
 	item(FEAT_RAILTYPES, rail_SAA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 	
 	item(FEAT_RAILTYPES, rail_SCA4) {
 	property {
-		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }
