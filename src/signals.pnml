@@ -78,18 +78,24 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect3, getbits(extra_callback_info2, 0, 8)){
 
 
 //Signal sprites for 4 aspect green/red signals
-spriteset(aspect4_r_block, "gfx/signal_electric_4asp_2.png") {template_signals(10,50)}
-spriteset(aspect4_g_block, "gfx/signal_electric_4asp_2.png") {template_signals(40,50)}
-spriteset(aspect4_r_en, "gfx/signal_electric_4asp_2.png") {template_signals(10,85)}
-spriteset(aspect4_g_en, "gfx/signal_electric_4asp_2.png") {template_signals(40,85)}
-spriteset(aspect4_r_ex, "gfx/signal_electric_4asp_2.png") {template_signals(10,120)}
-spriteset(aspect4_g_ex, "gfx/signal_electric_4asp_2.png") {template_signals(40,120)}
-spriteset(aspect4_r_co, "gfx/signal_electric_4asp_2.png") {template_signals(10,155)}
-spriteset(aspect4_g_co, "gfx/signal_electric_4asp_2.png") {template_signals(40,155)}
-spriteset(aspect4_r_path, "gfx/signal_electric_4asp_2.png") {template_signals(10,190)}
-spriteset(aspect4_g_path, "gfx/signal_electric_4asp_2.png") {template_signals(40,190)}
-spriteset(aspect4_r_owp, "gfx/signal_electric_4asp_2.png") {template_signals(10,225)}
-spriteset(aspect4_g_owp, "gfx/signal_electric_4asp_2.png") {template_signals(40,225)}
+spriteset(aspect4_r_block, "gfx/signal_electric_full_4asp.png") {template_signals(10,50)}
+spriteset(aspect4_g_block, "gfx/signal_electric_full_4asp.png") {template_signals(40,50)}
+spriteset(aspect4_r_en, "gfx/signal_electric_full_4asp.png") {template_signals(10,85)}
+spriteset(aspect4_g_en, "gfx/signal_electric_full_4asp.png") {template_signals(40,85)}
+spriteset(aspect4_r_ex, "gfx/signal_electric_full_4asp.png") {template_signals(10,120)}
+spriteset(aspect4_g_ex, "gfx/signal_electric_full_4asp.png") {template_signals(40,120)}
+spriteset(aspect4_r_co, "gfx/signal_electric_full_4asp.png") {template_signals(10,155)}
+spriteset(aspect4_g_co, "gfx/signal_electric_full_4asp.png") {template_signals(40,155)}
+spriteset(aspect4_r_path, "gfx/signal_electric_full_4asp.png") {template_signals(10,190)}
+spriteset(aspect4_g_path, "gfx/signal_electric_full_4asp.png") {template_signals(40,190)}
+spriteset(aspect4_r_owp, "gfx/signal_electric_full_4asp.png") {template_signals(10,225)}
+spriteset(aspect4_g_owp, "gfx/signal_electric_full_4asp.png") {template_signals(40,225)}
+spriteset(aspect4_y_block, "gfx/signal_electric_full_4asp.png") {template_signals(10,260)}
+spriteset(aspect4_yy_block, "gfx/signal_electric_full_4asp.png") {template_signals(40,260)}
+spriteset(aspect4_y_path, "gfx/signal_electric_full_4asp.png") {template_signals(10,295)}
+spriteset(aspect4_yy_path, "gfx/signal_electric_full_4asp.png") {template_signals(40,295)}
+spriteset(aspect4_y_owp, "gfx/signal_electric_full_4asp.png") {template_signals(10,330)}
+spriteset(aspect4_yy_owp, "gfx/signal_electric_full_4asp.png") {template_signals(40,330)}
 
 //Switches for 4 aspect green/red signals
 
@@ -111,59 +117,45 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect4_g, getbits(extra_callback_info2, 16, 8))
 05 : aspect4_g_owp;
 }
 
+switch(FEAT_RAILTYPES, SELF, sw_aspect4_y, getbits(extra_callback_info2, 16, 8)){
+00 : aspect4_y_block;
+01 : aspect4_g_en;
+02 : aspect4_g_ex;
+03 : aspect4_g_co;
+04 : aspect4_y_path;
+05 : aspect4_y_owp;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect4_yy, getbits(extra_callback_info2, 16, 8)){
+00 : aspect4_yy_block;
+01 : aspect4_g_en;
+02 : aspect4_g_ex;
+03 : aspect4_g_co;
+04 : aspect4_yy_path;
+05 : aspect4_yy_owp;
+}
+
+switch(FEAT_SIGNALS, SELF, sw_aspect4, [
+        STORE_TEMP(param[10] + (hasbit(extra_callback_info2, 24) ? 2 : 1), 0x100),
+        (extra_callback_info2 & 0x000000FF)
+    ]) {
+    0: sw_aspect4_r;
+    1: sw_aspect4_g;
+    param_aspect_style == 2 ? 3 : 2: sw_aspect4_y;
+    param_aspect_style == 2 ? 2 : 3: sw_aspect4_yy;
+}
+/*
 switch(FEAT_RAILTYPES, SELF, sw_aspect42, getbits(extra_callback_info2, 0, 8)){
 00 : sw_aspect4_r;
 01 : sw_aspect4_g;
+02 : sw_aspect4_y;
+03 : sw_aspect4_yy;
 }
 
 switch(FEAT_RAILTYPES, SELF, sw_aspect4, getbits(extra_callback_info2, 24, 8)){
 00 : sw_aspect42;
 01 : sw_aspect4_g;
-}
-
-//Signal sprites for 4 aspect double yellow/red signals
-spriteset(aspect4yy_r_block, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,50)}
-spriteset(aspect4yy_g_block, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,50)}
-spriteset(aspect4yy_r_en, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,85)}
-spriteset(aspect4yy_g_en, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,85)}
-spriteset(aspect4yy_r_ex, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,120)}
-spriteset(aspect4yy_g_ex, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,120)}
-spriteset(aspect4yy_r_co, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,155)}
-spriteset(aspect4yy_g_co, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,155)}
-spriteset(aspect4yy_r_path, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,190)}
-spriteset(aspect4yy_g_path, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,190)}
-spriteset(aspect4yy_r_owp, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(10,225)}
-spriteset(aspect4yy_g_owp, "gfx/signal_electric_4asp_2_double_yellow.png") {template_signals(40,225)}
-
-//Switches for 4 aspect double yellow/red signals
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4yy_r, getbits(extra_callback_info2, 16, 8)){
-00 : aspect4yy_r_block;
-01 : aspect4yy_r_en;
-02 : aspect4yy_r_ex;
-03 : aspect4yy_r_co;
-04 : aspect4yy_r_path;
-05 : aspect4yy_r_owp;
-}
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4yy_g, getbits(extra_callback_info2, 16, 8)){
-00 : aspect4yy_g_block;
-01 : aspect4yy_g_en;
-02 : aspect4yy_g_ex;
-03 : aspect4yy_g_co;
-04 : aspect4yy_g_path;
-05 : aspect4yy_g_owp;
-}
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4yy2, getbits(extra_callback_info2, 0, 8)){
-00 : sw_aspect4yy_r;
-01 : sw_aspect4yy_g;
-}
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4yy, getbits(extra_callback_info2, 24, 8)){
-00 : sw_aspect4yy2;
-01 : sw_aspect4yy_g;
-}
+}*/
 //What kind of electric signal do you want?
 
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals_general, signal_elec){
@@ -178,8 +170,6 @@ switch(FEAT_RAILTYPES, SELF, sw_electric_signals_slow, signal_elec){
 0 : sw_aspect2;
 1 : sw_aspect3;
 2 : sw_aspect4;
-3 : sw_aspect4yy;
-sw_aspect2;
 }
 
 switch(FEAT_RAILTYPES, SELF, sw_signals, getbits(extra_callback_info2, 8, 8)){
