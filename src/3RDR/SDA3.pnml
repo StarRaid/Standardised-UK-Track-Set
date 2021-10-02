@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SDA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 73;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDA3 ;
@@ -120,6 +121,7 @@ item(FEAT_RAILTYPES, rail_3RDC) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 83 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDA3 ;

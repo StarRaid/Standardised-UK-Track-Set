@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_3RDR) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 74 ;
 		speed_limit					: param[6] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_3RDR ;

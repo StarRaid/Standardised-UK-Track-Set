@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 51 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBAN ;
@@ -119,6 +120,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 61 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBAN ;

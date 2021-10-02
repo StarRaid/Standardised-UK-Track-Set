@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SCA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 72 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCA3 ;
@@ -120,6 +121,7 @@ item(FEAT_RAILTYPES, rail_SCAZ) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 82 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCA3 ;

@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 53 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDAN ;
@@ -119,6 +120,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 63 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDAN ;

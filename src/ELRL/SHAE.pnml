@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		introduction_date			: date(1960,1,1) ;
 		sort_order					: 68 ;
 		speed_limit					: param[10] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SHAE ;

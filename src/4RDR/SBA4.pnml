@@ -96,7 +96,7 @@ item(FEAT_RAILTYPES, rail_SBA4) {
 		level_crossings		: sw_lc_SBA4_state ;
 		fences				: sw_fences_SBA4 ;
 		depots				: sw_depot_SBA4 ;
-		signals				: sw_signals ;
+		signals				: sw_aspect2 ;
 	}
 }
 

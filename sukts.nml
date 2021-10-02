@@ -709,13 +709,12 @@ grf{
  			name:    string(STR_PARAM_SIGNAL_ELEC_NAME);
  			desc:    string(STR_PARAM_SIGNAL_ELEC_DESC);
  			min_value: 0;
- 			max_value: 4;
+ 			max_value: 2;
  			def_value: 0;
  			names: {
  				0: string(STR_PARAM_SIGNAL_ELEC_2ASP);
  				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
  				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
- 				3: string(STR_PARAM_SIGNAL_ELEC_4ASP_SPD);
  			};
 		}
 	}
@@ -848,6 +847,9 @@ spriteset(aspect3_r_path, "gfx/signal_electric_3asp_2.png") {template_signals(10
 spriteset(aspect3_g_path, "gfx/signal_electric_3asp_2.png") {template_signals(40,190)}
 spriteset(aspect3_r_owp, "gfx/signal_electric_3asp_2.png") {template_signals(10,225)}
 spriteset(aspect3_g_owp, "gfx/signal_electric_3asp_2.png") {template_signals(40,225)}
+spriteset(aspect3_y_block, "gfx/signal_electric_3asp_2.png") {template_signals(40,260)}
+spriteset(aspect3_y_path, "gfx/signal_electric_3asp_2.png") {template_signals(40,295)}
+spriteset(aspect3_y_owp, "gfx/signal_electric_3asp_2.png") {template_signals(40,330)}
 
 //Switches for 3 aspect green/red signals
 
@@ -869,9 +871,19 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect3_g, getbits(extra_callback_info2, 16, 8))
 05 : aspect3_g_owp;
 }
 
-switch(FEAT_RAILTYPES, SELF, sw_aspect3, getbits(extra_callback_info2, 0, 8)){
+switch(FEAT_RAILTYPES, SELF, sw_aspect3_y, getbits(extra_callback_info2, 16, 8)){
+00 : aspect3_y_block;
+01 : aspect3_g_en;
+02 : aspect3_g_ex;
+03 : aspect3_g_co;
+04 : aspect3_y_path;
+05 : aspect3_y_owp;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect3, getbits(extra_callback_info2, 0, 2)){
 00 : sw_aspect3_r;
 01 : sw_aspect3_g;
+02 : sw_aspect3_y;
 }
 
 
@@ -933,27 +945,12 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect4_yy, getbits(extra_callback_info2, 16, 8)
 05 : aspect4_yy_owp;
 }
 
-switch(FEAT_SIGNALS, SELF, sw_aspect4, [
-        STORE_TEMP(param[10] + (hasbit(extra_callback_info2, 24) ? 2 : 1), 0x100),
-        (extra_callback_info2 & 0x000000FF)
-    ]) {
-    0: sw_aspect4_r;
-    1: sw_aspect4_g;
-    param_aspect_style == 2 ? 3 : 2: sw_aspect4_y;
-    param_aspect_style == 2 ? 2 : 3: sw_aspect4_yy;
+switch(FEAT_RAILTYPES, SELF, sw_aspect4, getbits(extra_callback_info2, 0, 2)) {
+    00: sw_aspect4_r;
+    01: sw_aspect4_g;
+    02: sw_aspect4_y;
+    03: sw_aspect4_yy;
 }
-/*
-switch(FEAT_RAILTYPES, SELF, sw_aspect42, getbits(extra_callback_info2, 0, 8)){
-00 : sw_aspect4_r;
-01 : sw_aspect4_g;
-02 : sw_aspect4_y;
-03 : sw_aspect4_yy;
-}
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4, getbits(extra_callback_info2, 24, 8)){
-00 : sw_aspect42;
-01 : sw_aspect4_g;
-}*/
 //What kind of electric signal do you want?
 
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals_general, signal_elec){
@@ -967,7 +964,7 @@ sw_aspect2;
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals_slow, signal_elec){
 0 : sw_aspect2;
 1 : sw_aspect3;
-2 : sw_aspect4;
+sw_aspect4;
 }
 
 switch(FEAT_RAILTYPES, SELF, sw_signals, getbits(extra_callback_info2, 8, 8)){
@@ -984,6 +981,7 @@ switch(FEAT_RAILTYPES, SELF, sw_signals_low_speed, signal_elec){
 0..2 : sw_signals;
 sw_signals_slow;
 }
+
 # 1 "sukts.pnml" 2
 # 1 "src/depots.pnml" 1
 
@@ -1414,6 +1412,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 54 ;
 		speed_limit					: param[6] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_RAIL ;
@@ -1446,6 +1445,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 64 ;
 		speed_limit					: param[6] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_RAIL ;
@@ -1550,6 +1550,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 50 ;
 		speed_limit					: param[2] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SAAN ;
@@ -1582,6 +1583,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 60 ;
 		speed_limit					: param[2] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SAAN ;
@@ -1686,6 +1688,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 51 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBAN ;
@@ -1718,6 +1721,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 61 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBAN ;
@@ -1822,6 +1826,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 52 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCAN ;
@@ -1854,6 +1859,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 62 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCAN ;
@@ -1958,6 +1964,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 53 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDAN ;
@@ -1990,6 +1997,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 63 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDAN ;
@@ -2094,6 +2102,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 55 ;
 		speed_limit					: param[7] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SEAN ;
@@ -2126,6 +2135,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 65 ;
 		speed_limit					: param[7] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SEAN ;
@@ -2230,6 +2240,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 56 ;
 		speed_limit					: param[8] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SFAN ;
@@ -2262,6 +2273,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 66 ;
 		speed_limit					: param[8] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SFAN ;
@@ -2366,6 +2378,7 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 57 ;
 		speed_limit					: param[9] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SGAN ;
@@ -2398,6 +2411,7 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 67 ;
 		speed_limit					: param[9] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SGAN ;
@@ -2503,6 +2517,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		introduction_date			: date(1960,1,1) ;
 		sort_order					: 68 ;
 		speed_limit					: param[10] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SHAE ;
@@ -2610,6 +2625,7 @@ item(FEAT_RAILTYPES, rail_3RDR) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 74 ;
 		speed_limit					: param[6] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_3RDR ;
@@ -2716,6 +2732,7 @@ item(FEAT_RAILTYPES, rail_SAA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 70 ;
 		speed_limit					: param[2] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SAA3 ;
@@ -2749,6 +2766,7 @@ item(FEAT_RAILTYPES, rail_SAAZ) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 80 ;
 		speed_limit					: param[2] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SAA3 ;
@@ -2853,6 +2871,7 @@ item(FEAT_RAILTYPES, rail_SBA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 71 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBA3 ;
@@ -2886,6 +2905,7 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 81 ;
 		speed_limit					: param[3] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SBA3 ;
@@ -2990,6 +3010,7 @@ item(FEAT_RAILTYPES, rail_SCA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 72 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCA3 ;
@@ -3023,6 +3044,7 @@ item(FEAT_RAILTYPES, rail_SCAZ) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 82 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCA3 ;
@@ -3127,6 +3149,7 @@ item(FEAT_RAILTYPES, rail_SDA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 73;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDA3 ;
@@ -3160,6 +3183,7 @@ item(FEAT_RAILTYPES, rail_3RDC) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 83 ;
 		speed_limit					: param[5] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SDA3 ;
@@ -3264,6 +3288,7 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 75 ;
 		speed_limit					: param[7] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SEA3 ;
@@ -3370,6 +3395,7 @@ item(FEAT_RAILTYPES, rail_SFA3) {
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 76 ;
 		speed_limit					: param[8] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SFA3 ;
@@ -3487,7 +3513,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		level_crossings		: sw_lc_SAA4_state ;
 		fences				: sw_fences_SAA4 ;
 		depots				: sw_depot_SAA4 ;
-		signals				: sw_signals ;
+		signals				: sw_aspect2 ;
 	}
 }
 
@@ -3593,7 +3619,7 @@ item(FEAT_RAILTYPES, rail_SBA4) {
 		level_crossings		: sw_lc_SBA4_state ;
 		fences				: sw_fences_SBA4 ;
 		depots				: sw_depot_SBA4 ;
-		signals				: sw_signals ;
+		signals				: sw_aspect2 ;
 	}
 }
 
@@ -3699,7 +3725,7 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 		level_crossings		: sw_lc_SCA4_state ;
 		fences				: sw_fences_SCA4 ;
 		depots				: sw_depot_SCA4 ;
-		signals				: sw_signals ;
+		signals				: sw_aspect2 ;
 	}
 }
 
@@ -3805,7 +3831,7 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 		level_crossings		: sw_lc_SDA4_state ;
 		fences				: sw_fences_SDA4 ;
 		depots				: sw_depot_SDA4 ;
-		signals				: sw_signals ;
+		signals				: sw_aspect2 ;
 	}
 }
 

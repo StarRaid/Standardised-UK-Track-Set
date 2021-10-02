@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		introduction_date			: date(1804,1,1) ;
 		sort_order					: 52 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCAN ;
@@ -119,6 +120,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 62 ;
 		speed_limit					: param[4] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SCAN ;

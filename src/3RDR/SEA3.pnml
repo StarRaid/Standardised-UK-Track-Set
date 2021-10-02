@@ -87,6 +87,7 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 		introduction_date			: date(1880,1,1) ;
 		sort_order					: 75 ;
 		speed_limit					: param[7] mph ;
+		extra_aspects				: signal_elec;
 	}
 	graphics {
 		track_overlay		: gfx_overlays_SEA3 ;

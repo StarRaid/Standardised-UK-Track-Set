@@ -50,6 +50,9 @@ spriteset(aspect3_r_path, "gfx/signal_electric_3asp_2.png") {template_signals(10
 spriteset(aspect3_g_path, "gfx/signal_electric_3asp_2.png") {template_signals(40,190)}
 spriteset(aspect3_r_owp, "gfx/signal_electric_3asp_2.png") {template_signals(10,225)}
 spriteset(aspect3_g_owp, "gfx/signal_electric_3asp_2.png") {template_signals(40,225)}
+spriteset(aspect3_y_block, "gfx/signal_electric_3asp_2.png") {template_signals(40,260)}
+spriteset(aspect3_y_path, "gfx/signal_electric_3asp_2.png") {template_signals(40,295)}
+spriteset(aspect3_y_owp, "gfx/signal_electric_3asp_2.png") {template_signals(40,330)}
 
 //Switches for 3 aspect green/red signals
 
@@ -71,9 +74,19 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect3_g, getbits(extra_callback_info2, 16, 8))
 05 : aspect3_g_owp;
 }
 
-switch(FEAT_RAILTYPES, SELF, sw_aspect3, getbits(extra_callback_info2, 0, 8)){
+switch(FEAT_RAILTYPES, SELF, sw_aspect3_y, getbits(extra_callback_info2, 16, 8)){
+00 : aspect3_y_block;
+01 : aspect3_g_en;
+02 : aspect3_g_ex;
+03 : aspect3_g_co;
+04 : aspect3_y_path;
+05 : aspect3_y_owp;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect3, getbits(extra_callback_info2, 0, 2)){
 00 : sw_aspect3_r;
 01 : sw_aspect3_g;
+02 : sw_aspect3_y;
 }
 
 
@@ -135,27 +148,12 @@ switch(FEAT_RAILTYPES, SELF, sw_aspect4_yy, getbits(extra_callback_info2, 16, 8)
 05 : aspect4_yy_owp;
 }
 
-switch(FEAT_SIGNALS, SELF, sw_aspect4, [
-        STORE_TEMP(param[10] + (hasbit(extra_callback_info2, 24) ? 2 : 1), 0x100),
-        (extra_callback_info2 & 0x000000FF)
-    ]) {
-    0: sw_aspect4_r;
-    1: sw_aspect4_g;
-    param_aspect_style == 2 ? 3 : 2: sw_aspect4_y;
-    param_aspect_style == 2 ? 2 : 3: sw_aspect4_yy;
+switch(FEAT_RAILTYPES, SELF, sw_aspect4, getbits(extra_callback_info2, 0, 2)) {
+    00: sw_aspect4_r;
+    01: sw_aspect4_g;
+    02: sw_aspect4_y;
+    03: sw_aspect4_yy;
 }
-/*
-switch(FEAT_RAILTYPES, SELF, sw_aspect42, getbits(extra_callback_info2, 0, 8)){
-00 : sw_aspect4_r;
-01 : sw_aspect4_g;
-02 : sw_aspect4_y;
-03 : sw_aspect4_yy;
-}
-
-switch(FEAT_RAILTYPES, SELF, sw_aspect4, getbits(extra_callback_info2, 24, 8)){
-00 : sw_aspect42;
-01 : sw_aspect4_g;
-}*/
 //What kind of electric signal do you want?
 
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals_general, signal_elec){
@@ -169,7 +167,7 @@ sw_aspect2;
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals_slow, signal_elec){
 0 : sw_aspect2;
 1 : sw_aspect3;
-2 : sw_aspect4;
+sw_aspect4;
 }
 
 switch(FEAT_RAILTYPES, SELF, sw_signals, getbits(extra_callback_info2, 8, 8)){
@@ -186,3 +184,4 @@ switch(FEAT_RAILTYPES, SELF, sw_signals_low_speed, signal_elec){
 0..2 : sw_signals;
 sw_signals_slow;
 }
+

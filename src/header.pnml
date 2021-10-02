@@ -152,13 +152,12 @@ grf{
  			name:    string(STR_PARAM_SIGNAL_ELEC_NAME);
  			desc:    string(STR_PARAM_SIGNAL_ELEC_DESC);
  			min_value: 0;
- 			max_value: 4;
+ 			max_value: 2;
  			def_value: 0;
  			names: {
  				0: string(STR_PARAM_SIGNAL_ELEC_2ASP);
  				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
  				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
- 				3: string(STR_PARAM_SIGNAL_ELEC_4ASP_SPD);
  			};
 		}
 	}
