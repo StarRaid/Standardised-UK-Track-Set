@@ -559,7 +559,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 16 ;
+	version: 17 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
