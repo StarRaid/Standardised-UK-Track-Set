@@ -79,6 +79,7 @@ item(FEAT_RAILTYPES, rail_SBA3) {
 		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 10 ;
@@ -113,6 +114,7 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_DUAL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -132,6 +134,8 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		fences				: sw_fences_SBA3 ;
 		depots				: sw_depot_SBA3 ;
 		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
 	}
 }
 

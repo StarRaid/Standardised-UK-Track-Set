@@ -79,6 +79,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 11 ;
@@ -112,6 +113,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_CATENARY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 14 ;
@@ -131,6 +133,8 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		fences				: sw_fences_SDAN ;
 		depots				: sw_depot_SDAN ;
 		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_B;
 	}
 }
 

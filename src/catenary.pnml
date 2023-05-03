@@ -1,0 +1,6 @@
+spriteset (gfx_catenary_japanese_A,		"gfx/catpoles.png")	{japan_rails_pylons	(0)}
+spriteset (gfx_catenary_japanese_B,		"gfx/catpoles.png")	{japan_rails_pylons	(100)}
+spriteset (gfx_catenary_japanese_C,		"gfx/catpoles.png")	{japan_rails_pylons	(150)}
+spriteset (gfx_catenary_japanese_wires,	"gfx/catwire.png")	{japan_rails_wires	()}
+
+

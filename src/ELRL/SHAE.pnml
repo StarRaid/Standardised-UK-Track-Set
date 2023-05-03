@@ -79,6 +79,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 28 ;
@@ -98,6 +99,8 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		fences				: sw_fences_SHAE ;
 		depots				: sw_depot_SHAE ;
 		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_A;
 	}
 }
 

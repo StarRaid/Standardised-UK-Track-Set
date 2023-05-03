@@ -17,27 +17,27 @@
 
 #define STANDARD_GAUGE_RAILTYPE_ALL STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_EVERY_ELEC
 
-#define STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN"
+#define STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SADN", "SAEN", "SBAN", "SBBN", "SBCN", "SBDN", "SBEN", "SCAN", "SCBN", "SCCN", "SCDN", "SCEN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "SUAN", "SUBN", "SUUN", "SUDN", "SUEN", "SU1N", "SU2N", "SU3N", "SU4N", "SU5N"
 
 #define STANDARD_GAUGE_RAILTYPE_EVERY_ELEC STANDARD_GAUGE_RAILTYPE_CATENARY, STANDARD_GAUGE_RAILTYPE_3RD_RAIL , STANDARD_GAUGE_RAILTYPE_4TH_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL
 
 #define STANDARD_GAUGE_RAILTYPE_OHLE_ONLY STANDARD_GAUGE_RAILTYPE_CATENARY, STANDARD_GAUGE_RAILTYPE_DUAL
 
-#define STANDARD_GAUGE_RAILTYPE_CATENARY "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE"
+#define STANDARD_GAUGE_RAILTYPE_CATENARY "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SADE", "SAEE", "SBAE", "SBBE", "SBCE", "SBDE", "SBEE", "SCAE", "SCBE", "SCCE", "SCDE", "SCEE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "SUAE", "SUBE", "SUUE", "SUDE", "SUEE", "SU1E", "SU2E", "SU3E", "SU4E", "SU5E", "SAAD", "SABD", "SACD", "SADD", "SAED", "SBAD", "SBBD", "SBCD", "SBDD", "SBED", "SCAD", "SCBD", "SCCD", "SCDD", "SCED", "SUAD", "SUBD", "SUUD", "SUDD", "SUED"
 
-#define STANDARD_GAUGE_RAILTYPE_3RD_RAIL "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3"
+#define STANDARD_GAUGE_RAILTYPE_3RD_RAIL "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SAD3", "SAE3", "SBA3", "SBB3", "SBC3", "SBD3", "SBE3", "SCA3", "SCB3", "SCC3", "SCD3", "SCE3", "SDA3", "SEA3", "SFA3", "SSA3", "SSB3", "SSC3", "SSD3", "SSE3", "SUA3", "SUB3", "SUC3", "SUD3", "SUE3"
 
-#define STANDARD_GAUGE_RAILTYPE_4TH_RAIL "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"
+#define STANDARD_GAUGE_RAILTYPE_4TH_RAIL "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SAD4", "SAE4", "SBA4", "SBB4", "SBC4", "SBD4", "SBE4", "SCA4", "SCB4", "SCC4", "SCD4", "SCE4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"
 
 
-#define STANDARD_GAUGE_RAILTYPE_DUAL "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"
+#define STANDARD_GAUGE_RAILTYPE_DUAL "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SADZ", "SAEZ", "SBAZ", "SBBZ", "SBCZ", "SBDZ", "SBEZ", "SCAZ", "SCBZ", "SCCZ", "SCdZ", "SCeZ", "SDAZ", "SDBZ", "SDCZ", "SDDZ", "SDEZ"
 	
 	
 #define NARROW_GAUGE_RAILTYPE_ALL  NARROW_GAUGE_RAILTYPE_NOT_ELECTRIFIED, NARROW_GAUGE_RAILTYPE_CATENARY
 
-#define NARROW_GAUGE_RAILTYPE_NOT_ELECTRIFIED "NGRL", "NLOW", "NHIG", "NAAN", "NRAN", "NBAN"
+#define NARROW_GAUGE_RAILTYPE_NOT_ELECTRIFIED "NGRL", "NLOW", "NHIG", "NAAN", "NABN", "NACN", "NADN", "NAEN", "NAKN", "NBAN", "NBBN", "NBCN", "NBDN", "NBEN", "NBKN", "NCAN", "NCBN", "NCCN", "NCDN", "NCEN", "NCKN", "NUAN", "NUBN", "NUUN", "NUDN", "NUEN", "NU1N", "NU2N", "NU3N", "NU4N", "NU5N"
 
-#define NARROW_GAUGE_RAILTYPE_CATENARY "ELNG", "ENLW", "ENHI", "NAAE", "NRAE", "NBAE"
+#define NARROW_GAUGE_RAILTYPE_CATENARY "ELNG", "ENLW", "ENHI", "NAAE", "NABE", "NACE", "NADE", "NAEE", "NAKE", "NBAE", "NBBE", "NBCE", "NBDE", "NBEE", "NBKE", "NCAE", "NCBE", "NCCE", "NCDE", "NCEE", "NCKE", "NUAE", "NUBE", "NUUE", "NUDE", "NUEE", "NU1E", "NU2E", "NU3E", "NU4E", "NU5E", "NAAd", "NABd", "NACd", "NAdd", "NAEd", "NAKd", "NBAd", "NBBd", "NBCd", "NBdd", "NBEd", "NBKd", "NCAd", "NCBd", "NCCd", "NCdd", "NCEd", "NCKd", "NUAd", "NUBd", "NUUd", "NUdd", "NUEd"
 
 
 
@@ -587,3 +587,72 @@ template template_catenarywires() {
 
 
 
+
+// gui
+template tmpl_gui() {
+	[  0,  0, 20, 20, 0, 0]
+	[ 25,  0, 20, 20, 0, 0]
+	[ 50,  0, 20, 20, 0, 0]
+	[ 75,  0, 20, 20, 0, 0]
+	[100,  0, 20, 20, 0, 0]
+	[125,  0, 20, 20, 0, 0]
+	[150,  0, 20, 20, 0, 0]
+	[175,  0, 20, 20, 0, 0]
+	
+	[200,  0, 32, 32, 0, 0]
+	[250,  0, 32, 32, 0, 0]
+	[300,  0, 32, 32, 0, 0]
+	[350,  0, 32, 32, 0, 0]
+	[400,  0, 32, 32, 0, 0]
+	[450,  0, 32, 32, 0, 0]
+	[500,  0, 32, 32, 0, 0]
+	[550,  0, 32, 32, 0, 0]
+}
+
+
+
+//Courtesy of Emperor Jake I guess
+//Catenary Poles Modern style
+//maybe re-add urban poles in future
+template japan_rails_pylons(y) {
+	[      0,	y,     10,     19,       -8, 	 -19]
+	[     16,	y,     9,      21,        0, 	 -21]
+	[     32,	y,     10,     19,        0, 	 -19]
+	[     48,	y,     9,      21,       -7, 	 -21]
+	[     64,	y,     3,      18,        0,  	 -19]
+	[     80,	y,     3,      21,        0,  	 -21]
+	[     96,	y,     10,     19, 	     -2,  	 -17]
+	[    112,	y,     10,     19,       -7, 	 -15]
+}
+
+//Catenary Wires
+template japan_rails_wires() {
+	[0,		0,  	32, 20, -29, -6]
+	[48,	0,  	32, 20,  -1, -6]
+	[96,	0,  	32,  5,  -1, -6]
+	[144,	0,  	1,  20,   0, -7]
+	[160,	0,  	32, 28, -29, -6]
+	[208,	0,  	32, 13,  -1,  2]
+	[256,	0,  	32, 13, -29,  2]
+	[304,	0,  	32, 18,  -1, -6]
+	[352,	0, 		32, 19, -29, -5]
+	[400,	0, 		32, 19,  -1, -5]
+	[448,	0, 		32,  5,  -1, -6]
+	[496,	0, 		1,  20,   0, -7]
+	[512,	0, 		32, 27, -29, -5]
+	[560,	0, 		32, 12,  -1,  3]
+	[608,	0, 		32, 12, -29,  3]
+	[656,	0, 		32, 27,  -1, -5]
+	[704,	0, 		32, 20, -29, -6]
+	[0, 	50, 	32,	20,  -1, -6]
+	[48, 	50, 	32,  5,  -1, -6]
+	[96, 	50, 	1,  20,   0, -7]
+	[112, 	50, 	32, 28, -29, -6]
+	[160, 	50, 	32, 13,  -1,  2]
+	[208, 	50, 	32,	13, -29,  2]
+	[256, 	50, 	32, 28,  -1, -6]
+	[304, 	50, 	16, 11, -29,  3]
+	[336, 	50, 	16, 12,  -1, -6]
+	[368, 	50, 	16, 12, -13, -6]
+	[400, 	50, 	16, 11,  15,  3]
+}
