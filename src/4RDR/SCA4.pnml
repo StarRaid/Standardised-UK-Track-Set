@@ -79,14 +79,13 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 7 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
-		sort_order					: 90 ;
+		sort_order					: 189 ;
 		speed_limit					: param[4] mph ;
 	}
 	graphics {

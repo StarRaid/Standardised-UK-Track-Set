@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_SAA3, fence_number < 1){
 
 // Item
 
+if(extra_tracks >= 3){
+
 item(FEAT_RAILTYPES, rail_SAA3) {
 	property {
 		label						: "SAA3" ;
@@ -79,14 +81,13 @@ item(FEAT_RAILTYPES, rail_SAA3) {
 		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1880,1,1) ;
-		sort_order					: 70 ;
+		sort_order					: 175 ;
 		speed_limit					: param[2] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -114,14 +115,13 @@ item(FEAT_RAILTYPES, rail_SAAZ) {
 		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_DUAL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 10 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
-		sort_order					: 80 ;
+		sort_order					: 191 ;
 		speed_limit					: param[2] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -139,3 +139,4 @@ item(FEAT_RAILTYPES, rail_SAAZ) {
 	}
 }
 
+}

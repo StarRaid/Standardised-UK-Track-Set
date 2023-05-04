@@ -46,6 +46,37 @@ if(toggle_limits == 0){
 		speed_limit : 0; 
 	}
 	}
+	
+	item(FEAT_RAILTYPES, rail_SY13) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY23) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY33) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY43) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY53) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
 	item(FEAT_RAILTYPES, rail_SAAZ) {
 	property {
 		speed_limit : 0; 
@@ -69,6 +100,38 @@ if(toggle_limits == 0){
 		speed_limit : 0; 
 	}
 	}
+	
+	item(FEAT_RAILTYPES, rail_SY1Z) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY2Z) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY3Z) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY4Z) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY5Z) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	
 	item(FEAT_RAILTYPES, rail_SAAE) {
 	property {
 		speed_limit : 0; 
@@ -122,6 +185,38 @@ if(toggle_limits == 0){
 		speed_limit : 0; 
 	}
 	}
+	
+	item(FEAT_RAILTYPES, rail_SY1E) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY2E) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY3E) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY4E) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY5E) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	
 	item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
 		speed_limit : 0; 
@@ -169,6 +264,37 @@ if(toggle_limits == 0){
 		speed_limit : 0; 
 	}
 	}
+	
+	item(FEAT_RAILTYPES, rail_SY1N) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY2N) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY3N) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY4N) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SY5N) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
 	item(FEAT_RAILTYPES, rail_SAA4) {
 	property {
 		speed_limit : 0; 
@@ -193,7 +319,6 @@ if(toggle_limits == 0){
 	}
 	}
 }
-
 
 
 if(extra_tracks < 1){

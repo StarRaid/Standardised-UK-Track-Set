@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_SAAN, fence_number < 1){
 
 // Item
 
+if(extra_tracks >= 3){
+
 item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
 		label						: "SAAN" ;
@@ -79,14 +81,13 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 6 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 50 ;
+		sort_order					: 148 ;
 		speed_limit					: param[2] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -113,14 +114,13 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_CATENARY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 9 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
-		sort_order					: 60 ;
+		sort_order					: 161 ;
 		speed_limit					: param[2] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -138,3 +138,4 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 	}
 }
 
+}

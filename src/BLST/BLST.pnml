@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_BLST, fence_number < 1){
 
 // Item
 
+if(decor_tracks){
+
 item(FEAT_RAILTYPES, rail_BLST) {
 	property {
 		label						: "BLST" ;
@@ -85,7 +87,7 @@ item(FEAT_RAILTYPES, rail_BLST) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 6 ;
+		sort_order					: 145 ;
 	}
 	graphics {
 		track_overlay		: sw_underlay_BLST ;
@@ -99,7 +101,7 @@ item(FEAT_RAILTYPES, rail_BLST) {
 	}
 }
 
-
+}
 
 
 
@@ -179,6 +181,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_BLS2, fence_number < 1){
 
 // Item
 
+if(decor_tracks){
+
 item(FEAT_RAILTYPES, rail_BLS2) {
 	property {
 		label						: "BLS2" ;
@@ -196,7 +200,7 @@ item(FEAT_RAILTYPES, rail_BLS2) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 7 ;
+		sort_order					: 146 ;
 	}
 	graphics {
 		track_overlay		: gfx_blank ;
@@ -210,7 +214,7 @@ item(FEAT_RAILTYPES, rail_BLS2) {
 	}
 }
 
-
+}
 
 
 
@@ -286,6 +290,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_BLS3, fence_number < 1){
 
 // Item
 
+if(decor_tracks){
+
 item(FEAT_RAILTYPES, rail_BLS3) {
 	property {
 		label						: "BLS3" ;
@@ -303,7 +309,7 @@ item(FEAT_RAILTYPES, rail_BLS3) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 8 ;
+		sort_order					: 147 ;
 	}
 	graphics {
 		track_overlay		: sw_underlay_BLS3 ;
@@ -317,4 +323,5 @@ item(FEAT_RAILTYPES, rail_BLS3) {
 	}
 }
 
+}
 

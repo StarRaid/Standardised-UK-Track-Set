@@ -80,13 +80,14 @@ item(FEAT_RAILTYPES, rail_3RDR) {
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
 		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL] ;
+		introduces_railtype_list	: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 16 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
-		introduction_date			: date(1935,1,1) ;
-		sort_order					: 74 ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 179 ;
 		speed_limit					: param[6] mph ;
 		extra_aspects				: signal_elec;
 	}

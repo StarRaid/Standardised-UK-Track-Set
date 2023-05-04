@@ -1,0 +1,872 @@
+
+spriteset(gfx_underlay_SY1N,			"gfx/EYCA/Underlay_SY1N.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY2N,			"gfx/EYCA/Underlay_SY2N.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY3N,			"gfx/EYCA/Underlay_SY3N.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY4N,			"gfx/EYCA/Underlay_SY4N.png")		{	template_underlay_auz()				}
+
+spriteset(gfx_underlay_SY13,			"gfx/EYCA/Underlay_SY13.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY23,			"gfx/EYCA/Underlay_SY23.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY33,			"gfx/EYCA/Underlay_SY33.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlay_SY43,			"gfx/EYCA/Underlay_SY43.png")		{	template_underlay_auz()				}
+
+//Ballastless Standard
+
+spriteset(gfx_overlays_SY5N,			"gfx/RAIL/SY5N/Overlay_SY5N.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_SY5N,			"gfx/RAIL/SY5N/Underlay_SY5N.png")		{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_SY5N,		"gfx/RAIL/SY5N/TunnelTrack_SY5N.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_SY5N,		"gfx/RAIL/SY5N/BridgeTrack_SY5N.png")	{	template_bridgetracks()				}
+
+
+spriteset(gfx_fences_SY5N,				"gfx/RAIL/SY5N/Fences_SY5N.png")		{	template_fences()					}
+spriteset(gfx_depot_SY5N,				"gfx/RAIL/SY5N/Depot_SY5N.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_SY5N_empty,	"gfx/RAIL/SY5N/LevelCrossing_SY5N.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SY5N_closed,	"gfx/RAIL/SY5N/LevelCrossing_SY5N.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SY5N_open,		"gfx/RAIL/SY5N/LevelCrossing_SY5N.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_SY5N_empty_modern,		"gfx/RAIL/SY5N/LevelCrossingModern_SY5N.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SY5N_closed_modern,	"gfx/RAIL/SY5N/LevelCrossingModern_SY5N.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SY5N_open_modern,		"gfx/RAIL/SY5N/LevelCrossingModern_SY5N.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SY5N_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SY5N_closed ;
+	gfx_level_crossing_SY5N_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SY5N_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SY5N_open ;
+	gfx_level_crossing_SY5N_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_SY5N_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_SY5N_closed ;
+	sw_lc_SY5N_open ;
+}
+
+//Ballastless 3rd Rail
+
+spriteset(gfx_overlays_SY53,			"gfx/3RDR/SY53/Overlay_SY53.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_SY53,			"gfx/3RDR/SY53/Underlay_SY53.png")		{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_SY53,		"gfx/3RDR/SY53/TunnelTrack_SY53.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_SY53,		"gfx/3RDR/SY53/BridgeTrack_SY53.png")	{	template_bridgetracks()				}
+
+spriteset(gfx_level_crossing_SY53_empty,	"gfx/3RDR/SY53/LevelCrossing_SY53.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SY53_closed,	"gfx/3RDR/SY53/LevelCrossing_SY53.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SY53_open,		"gfx/3RDR/SY53/LevelCrossing_SY53.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_SY53_empty_modern,		"gfx/3RDR/SY53/LevelCrossingModern_SY53.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SY53_closed_modern,	"gfx/3RDR/SY53/LevelCrossingModern_SY53.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SY53_open_modern,		"gfx/3RDR/SY53/LevelCrossingModern_SY53.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SY53_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SY53_closed ;
+	gfx_level_crossing_SY53_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SY53_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SY53_open ;
+	gfx_level_crossing_SY53_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_SY53_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_SY53_closed ;
+	sw_lc_SY53_open ;
+}
+
+
+
+
+if(param[15]){
+
+//Normal
+
+item(FEAT_RAILTYPES, rail_SY1N) {
+	property {
+		label						: "SY1N" ;
+		name						: string(STR_SY1N_NAME) ;
+		menu_text					: string(STR_SY1N_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 156 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1804,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY1N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY2N) {
+	property {
+		label						: "SY2N" ;
+		name						: string(STR_SY2N_NAME) ;
+		menu_text					: string(STR_SY2N_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 157 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1804,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY2N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY3N) {
+	property {
+		label						: "SY3N" ;
+		name						: string(STR_SY3N_NAME) ;
+		menu_text					: string(STR_SY3N_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 158 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1804,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY3N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY4N) {
+	property {
+		label						: "SY4N" ;
+		name						: string(STR_SY4N_NAME) ;
+		menu_text					: string(STR_SY4N_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 159 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1804,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY4N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY5N) {
+	property {
+		label						: "SY5N" ;
+		name						: string(STR_SY5N_NAME) ;
+		menu_text					: string(STR_SY5N_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 160 ;
+		speed_limit					: param[2] mph ;
+		introduction_date			: date(1804,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SY5N ;
+		underlay			: gfx_underlays_SY5N ;
+		bridge_surfaces		: gfx_bridge_tracks_SY5N ;
+		tunnels				: gfx_tunnel_tracks_SY5N ;
+		level_crossings		: sw_lc_SY5N_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+	}
+}
+
+
+
+
+
+// OHLE
+
+item(FEAT_RAILTYPES, rail_SY1E) {
+	property {
+		label						: "SY1E" ;
+		name						: string(STR_SY1E_NAME) ;
+		menu_text					: string(STR_SY1E_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 170 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY1N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY2E) {
+	property {
+		label						: "SY2E" ;
+		name						: string(STR_SY2E_NAME) ;
+		menu_text					: string(STR_SY2E_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 171 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY2N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY3E) {
+	property {
+		label						: "SY3E" ;
+		name						: string(STR_SY3E_NAME) ;
+		menu_text					: string(STR_SY3E_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 172 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY3N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY4E) {
+	property {
+		label						: "SY4E" ;
+		name						: string(STR_SY4E_NAME) ;
+		menu_text					: string(STR_SY4E_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 173;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDAN ;
+		underlay			: gfx_underlay_SY4N ;
+		bridge_surfaces		: gfx_bridge_tracks_SDAN ;
+		tunnels				: gfx_tunnel_tracks_SDAN ;
+		level_crossings		: sw_lc_SDAN_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY5E) {
+	property {
+		label						: "SY5E" ;
+		name						: string(STR_SY5E_NAME) ;
+		menu_text					: string(STR_SY5E_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 174;
+		speed_limit					: param[2] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SY5N ;
+		underlay			: gfx_underlays_SY5N ;
+		bridge_surfaces		: gfx_bridge_tracks_SY5N ;
+		tunnels				: gfx_tunnel_tracks_SY5N ;
+		level_crossings		: sw_lc_SY5N_state ;
+		fences				: sw_fences_SAAN ;
+		depots				: sw_depot_SAAN ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+
+
+// 3rd Rail
+
+item(FEAT_RAILTYPES, rail_SY13) {
+	property {
+		label						: "SY13" ;
+		name						: string(STR_SY13_NAME) ;
+		menu_text					: string(STR_SY13_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 182;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1880,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY13 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY23) {
+	property {
+		label						: "SY23" ;
+		name						: string(STR_SY23_NAME) ;
+		menu_text					: string(STR_SY23_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 183;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1880,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY23 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY33) {
+	property {
+		label						: "SY33" ;
+		name						: string(STR_SY33_NAME) ;
+		menu_text					: string(STR_SY33_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 184;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1880,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY33 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY43) {
+	property {
+		label						: "SY43" ;
+		name						: string(STR_SY43_NAME) ;
+		menu_text					: string(STR_SY43_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 185;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1880,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY43 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY53) {
+	property {
+		label						: "SY53" ;
+		name						: string(STR_SY53_NAME) ;
+		menu_text					: string(STR_SY53_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		sort_order					: 186;
+		speed_limit					: param[2] mph ;
+		introduction_date			: date(1880,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SY53 ;
+		underlay			: gfx_underlays_SY53 ;
+		bridge_surfaces		: gfx_bridge_tracks_SY53 ;
+		tunnels				: gfx_tunnel_tracks_SY53 ;
+		level_crossings		: sw_lc_SY53_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+
+
+
+
+
+
+
+//Dual Voltage
+
+item(FEAT_RAILTYPES, rail_SY1Z) {
+	property {
+		label						: "SY1Z" ;
+		name						: string(STR_SY1Z_NAME) ;
+		menu_text					: string(STR_SY1Z_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 195 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY13 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY2Z) {
+	property {
+		label						: "SY2Z" ;
+		name						: string(STR_SY2Z_NAME) ;
+		menu_text					: string(STR_SY2Z_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 196 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY23 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY3Z) {
+	property {
+		label						: "SY3Z" ;
+		name						: string(STR_SY3Z_NAME) ;
+		menu_text					: string(STR_SY3Z_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 197 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY33 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY4Z) {
+	property {
+		label						: "SY4Z" ;
+		name						: string(STR_SY4Z_NAME) ;
+		menu_text					: string(STR_SY4Z_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 198 ;
+		speed_limit					: param[16] mph ;
+		introduction_date			: date(1883,1,1) ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY43 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		level_crossings		: sw_lc_SDA3_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_SY5Z) {
+	property {
+		label						: "SY5Z" ;
+		name						: string(STR_SY5Z_NAME) ;
+		menu_text					: string(STR_SY5Z_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		sort_order					: 199 ;
+		speed_limit					: param[2] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SY53 ;
+		underlay			: gfx_underlays_SY53 ;
+		bridge_surfaces		: gfx_bridge_tracks_SY53 ;
+		tunnels				: gfx_tunnel_tracks_SY53 ;
+		level_crossings		: sw_lc_SY53_state ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_SAA3 ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_catenary_japanese_wires;
+        catenary_pylons		: gfx_catenary_japanese_C;
+	}
+}
+
+
+
+// Invisble Item
+
+item(FEAT_RAILTYPES, rail_INVS) {
+	property {
+		label						: "INVS" ;
+		name						: string(STR_INVS_NAME) ;
+		menu_text					: string(STR_INVS_NAME) ;
+		build_window_caption		: string(STR_OTER_BUILD_NAME) ;
+		autoreplace_text			: string(STR_OTER_REPLACE_NAME) ;
+		new_engine_text				: string(STR_OTER_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_OTER_TOOLBAR) ;
+		compatible_railtype_list	: [] ;
+		powered_railtype_list		: [] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 5 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 140 ;
+		speed_limit					: 0 mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_blank ;
+		underlay			: gfx_blank ;
+		bridge_surfaces		: gfx_blank ;
+		tunnels				: gfx_blank ;
+		level_crossings		: gfx_blank ;
+		fences				: gfx_fences_SDAN ;
+	}
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+if (grf_future_status("\45\4E\37\01") == 1) { //Trackless tracks
+item(FEAT_RAILTYPES, rail_ISR1) {
+	property {
+		label				: "ISR1" ; //Dirt
+        name                : string(STR_IND_1) ;
+        sort_order          : 141 ;
+        speed_limit         : 0 ;
+    }
+}
+item(FEAT_RAILTYPES, rail_ISR2) {
+	property {
+		label				: "ISR2" ; //Dirt
+        name                : string(STR_IND_2) ;
+        sort_order          : 142 ;
+        speed_limit         : 0 ;
+    }
+}
+item(FEAT_RAILTYPES, rail_ISR3) {
+	property {
+		label				: "ISR3" ; //Asphalt
+        name                : string(STR_IND_3) ;
+        sort_order          : 143 ;
+        speed_limit         : 0 ;
+    }
+}
+item(FEAT_RAILTYPES, rail_ISR4) {
+	property {
+		label				: "ISR4" ; //Cobblestone
+        name                : string(STR_IND_4) ;
+        sort_order          : 144 ;
+        speed_limit         : 0 ;
+    }
+}
+}
+

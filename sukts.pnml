@@ -41,6 +41,7 @@
 #include "src/4RDR/SCA4.pnml"
 #include "src/4RDR/SDA4.pnml"
 
+#include "src/industrial.pnml"
 
 
 #include "src/footer.pnml"

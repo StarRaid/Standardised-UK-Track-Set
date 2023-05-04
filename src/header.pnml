@@ -57,7 +57,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 20 ;
+			def_value	: 30 ;
 		}
 	}
 	param 4{
@@ -67,7 +67,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 40 ;
+			def_value	: 50 ;
 		}
 	}
 	param 5{
@@ -77,7 +77,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 60 ;
+			def_value	: 70 ;
 		}
 	}
 	param 6{
@@ -87,7 +87,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 75 ;
+			def_value	: 90 ;
 		}
 	}
 	param 7{
@@ -97,7 +97,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 100 ;
+			def_value	: 125 ;
 		}
 	}
 	param 8{
@@ -107,7 +107,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 100 ;
+			def_value	: 110 ;
 		}
 	}
 	param 9{
@@ -117,7 +117,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 125 ;
+			def_value	: 140 ;
 		}
 	}
 	param 10{
@@ -127,7 +127,7 @@ grf{
 			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 187 ;
+			def_value	: 200 ;
 		}
 	}
 	param 11{
@@ -199,6 +199,16 @@ grf{
 			desc    : string(STR_PARAM_DECOR_DESC) ;
 			bit     : 1 ;
 			def_value : 0 ;
+		}
+	}
+	param 16{
+		speed_decor{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_DECOR) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 30 ;
 		}
 	}
 }

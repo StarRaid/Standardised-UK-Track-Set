@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_SGAN, fence_number < 3){
 
 // Item
 
+if(extra_tracks >= 1){
+
 item(FEAT_RAILTYPES, rail_SGAN) {
 	property {
 		label						: "SGAN" ;
@@ -79,14 +81,13 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 20 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1935,1,1) ;
-		sort_order					: 57 ;
+		sort_order					: 155 ;
 		speed_limit					: param[9] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -113,14 +114,13 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_CATENARY] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 23 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1935,1,1) ;
-		sort_order					: 67 ;
+		sort_order					: 168 ;
 		speed_limit					: param[9] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -138,3 +138,4 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 	}
 }
 
+}

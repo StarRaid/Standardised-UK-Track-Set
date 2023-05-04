@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_SEA3, fence_number < 2){
 
 // Item
 
+if(extra_tracks >= 2){
+
 item(FEAT_RAILTYPES, rail_SEA3) {
 	property {
 		label						: "SEA3" ;
@@ -79,14 +81,13 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 17 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1880,1,1) ;
-		sort_order					: 75 ;
+		sort_order					: 180 ;
 		speed_limit					: param[7] mph ;
 		extra_aspects				: signal_elec;
 	}
@@ -102,5 +103,5 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 	}
 }
 
-
+}
 

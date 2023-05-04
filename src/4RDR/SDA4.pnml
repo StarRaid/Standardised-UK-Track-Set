@@ -68,6 +68,8 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_SDA4, fence_number < 2){
 
 // Item
 
+if(extra_tracks >= 3){
+
 item(FEAT_RAILTYPES, rail_SDA4) {
 	property {
 		label						: "SDA4" ;
@@ -79,14 +81,13 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
-		alternative_railtype_list	: [STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 7 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
-		sort_order					: 90 ;
+		sort_order					: 190 ;
 		speed_limit					: param[5] mph ;
 	}
 	graphics {
@@ -101,5 +102,5 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 	}
 }
 
-
+}
 
