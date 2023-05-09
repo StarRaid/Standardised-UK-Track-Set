@@ -104,10 +104,10 @@ STR_4RDR_REPLACE_NAME		:Replace Standard Gauge (630v 4th Rail) vehicles.
 STR_4RDR_NEW_TRAIN			:Standard Gauge (630v 4th Rail)
 
 
-STR_3RDC_TOOLBAR			:Standard Gauge (Dual Voltaage) construction.{YELLOW}
-STR_3RDC_BUILD_NAME			:New Standard Gauge (Dual Voltaage) vehicles.
-STR_3RDC_REPLACE_NAME		:Replace Standard Gauge (Dual Voltaage) vehicles.
-STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltaage)
+STR_3RDC_TOOLBAR			:Standard Gauge (Dual Voltage) construction.{YELLOW}
+STR_3RDC_BUILD_NAME			:New Standard Gauge (Dual Voltage) vehicles.
+STR_3RDC_REPLACE_NAME		:Replace Standard Gauge (Dual Voltage) vehicles.
+STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltage)
 
 STR_OTER_TOOLBAR            :Invisible track construction.{YELLOW}
 STR_OTER_BUILD_NAME         :New invisible track vehicles.
@@ -175,16 +175,22 @@ STR_SBA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden,
 STR_SCA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Grey){YELLOW}
 STR_SDA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLOW}
 
-STR_SAAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
-STR_SBAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}
-STR_SCAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Grey){YELLOW}
-STR_3RDC_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLOW}
+STR_SAAZ_NAME				:Standard Gauge {GREEN}(Dual Voltage) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SBAZ_NAME				:Standard Gauge {GREEN}(Dual Voltage) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}
+STR_SCAZ_NAME				:Standard Gauge {GREEN}(Dual Voltage) {GOLD}(Sleeper: Wooden, Rail: Grey){YELLOW}
+STR_3RDC_NAME				:Standard Gauge {GREEN}(Dual Voltage) {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLOW}
 
-STR_SY1Z_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {RED}(ISR ground){YELLOW}
-STR_SY2Z_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {ORANGE}(CHIPS Cobblestone ground){YELLOW}
-STR_SY3Z_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {BROWN}(CHIPS Dirt ground){YELLOW}
-STR_SY4Z_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {SILVER}(CHIPS Asphalt ground){YELLOW}
-STR_SY5Z_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GREEN}(Bare ground){YELLOW}
+STR_SY1Z_NAME				:Standard Gauge {GREEN}(Dual Voltage) {RED}(ISR ground){YELLOW}
+STR_SY2Z_NAME				:Standard Gauge {GREEN}(Dual Voltage) {ORANGE}(CHIPS Cobblestone ground){YELLOW}
+STR_SY3Z_NAME				:Standard Gauge {GREEN}(Dual Voltage) {BROWN}(CHIPS Dirt ground){YELLOW}
+STR_SY4Z_NAME				:Standard Gauge {GREEN}(Dual Voltage) {SILVER}(CHIPS Asphalt ground){YELLOW}
+STR_SY5Z_NAME				:Standard Gauge {GREEN}(Dual Voltage) {GREEN}(Bare ground){YELLOW}
+
+STR_TNLA_NAME				:Underground Standard Gauge {GREEN}(Dual Voltage) {GOLD}(Roof: Light concrete, Sleeper: Light concrete, Rail: Grey){YELLOW}
+STR_TNLB_NAME				:Underground Standard Gauge {GREEN}(Dual Voltage) {SILVER}(CHIPS Asphalt ground){YELLOW}
+STR_TNLC_NAME				:Underground Standard Gauge {GREEN}(Dual Voltage) {ORANGE}(CHIPS Cobblestone ground){YELLOW}
+STR_TNLD_NAME				:Underground Standard Gauge {GREEN}(Dual Voltage) {BROWN}(CHIPS Dirt ground){YELLOW}
+STR_TNLE_NAME				:Underground Standard Gauge {GREEN}(Dual Voltage) {GREEN}(Bare ground){YELLOW}
 
 
 

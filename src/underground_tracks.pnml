@@ -1,43 +1,50 @@
-template template_underlay_auz() {
+template template_underlay_auz_tnl(y) {
     //left_x, upper_y, width, height, offset_x, offset_y
-    [   1,		1,		64,		31,		-45,	-5	]
-    [  66,		1,		64,		31,		-17,	-5	]
-    [  131,		1,		64,		31,		-17,	-5	]
-    [  196,		1,		32,		31,		-15,	-6	]
+    [   1,		y+1,		64,		31,		-45,	-5	]
+    [  66,		y+1,		64,		31,		-17,	-5	]
+    [  131,		y+1,		64,		17,		-17,	-5	]
+    [  196,		y+1,		32,		31,		-15,	-6	]
 	//Slopes
-    [ 391,		1,		64,		41,		-45,	-8	]
-    [ 456,		1,		64,		41,		-17,	-6	]
-    [ 521,		1,		64,		41,		-45,	-6	]
-    [ 586,		1,		64,		41,		-17,	-8	]
+    [ 391,		y+1,		64,		41,		-45,	-8	]
+    [ 456,		y+1,		64,		41,		-17,	-6	]
+    [ 521,		y+1,		64,		41,		-45,	-6	]
+    [ 586,		y+1,		64,		41,		-17,	-8	]
 	
-    [   1,		1,		64,		31,		-45,	-5	]
-    [  66,		1,		64,		31,		-17,	-5	]
-    [  131,		17,		64,		17,		-17,	-5	]
-    [  164,		1,		32,		31,		-15,	-6	]
+    [   1,		y+1,		64,		31,		-45,	-5	]
+    [  66,		y+1,		64,		31,		-17,	-5	]
+    [  131,		y+15,		64,		17,		-17,	-5	]
+    [  163,		y+1,		32,		31,		-15,	-6	]
 	
-    [ 391,		1,		64,		41,		-45,	-8	]
-    [ 456,		1,		64,		41,		-17,	-6	]
-    [ 521,		1,		64,		41,		-45,	-6	]
-    [ 586,		1,		64,		41,		-17,	-8	]
+    [ 391,		y+1,		64,		41,		-45,	-8	]
+    [ 456,		y+1,		64,		41,		-17,	-6	]
+    [ 521,		y+1,		64,		41,		-45,	-6	]
+    [ 586,		y+1,		64,		41,		-17,	-8	]
 	
-    [   1,		1,		64,		31,		-45,	-5	]
-    [  66,		1,		64,		31,		-17,	-5	]
-    [  131,		1,		64,		31,		-17,	-5	]
-    [  196,		1,		32,		31,		-15,	-6	]
+    [   1,		y+1,		64,		31,		-45,	-5	]
+    [  66,		y+1,		64,		31,		-17,	-5	]
+    [  131,		y+1,		64,		17,		-17,	-5	]
+    [  196,		y+1,		32,		31,		-15,	-6	]
 	
-    [ 391,		1,		64,		41,		-45,	-8	]
-    [ 456,		1,		64,		41,		-17,	-6	]
-    [ 521,		1,		64,		41,		-45,	-6	]
-    [ 586,		1,		64,		41,		-17,	-8	]
+    [ 391,		y+1,		64,		41,		-45,	-8	]
+    [ 456,		y+1,		64,		41,		-17,	-6	]
+    [ 521,		y+1,		64,		41,		-45,	-6	]
+    [ 586,		y+1,		64,		41,		-17,	-8	]
 	
-    [   1,		1,		64,		31,		-45,	-5	]
-    [  66,		1,		64,		31,		-17,	-5	]
-    [   1,		1,		64,		31,		-45,	-5	]
-    [  66,		1,		64,		31,		-17,	-5	]
+    [   1,		y+1,		64,		31,		-45,	-5	]
+    [  66,		y+1,		64,		31,		-17,	-5	]
+    [   1,		y+1,		64,		17,		-45,	-5	]
+    [  66,		y+1,		32,		31,		-17,	-5	]
 }
 
+template template_tunnel_overlay_auz(y) {
+    [ 391,		y+1,		64,		41,		-31,	-40	]
+    [ 456,		y+1,		64,		41,		-31,	-40	]
+    [ 521,		y+1,		64,		41,		-31,	-40	]
+    [ 586,		y+1,		64,		41,		-31,	-40	]
+	}
+
 //Used for blank catenary posts
-spriteset(gfx_none_8, "gfx/railtypes/roof.png"){
+spriteset(gfx_none_8, "gfx/Tunnel Rooves/roof_SUKTS_concrete.png"){
 [1,1,1,1,0,0]
 [1,1,1,1,0,0]
 [1,1,1,1,0,0]
@@ -47,5 +54,347 @@ spriteset(gfx_none_8, "gfx/railtypes/roof.png"){
 [1,1,1,1,0,0]
 [1,1,1,1,0,0]}
 
-spriteset(gfx_tunnel_roof,		"gfx/railtypes/roof.png")	{template_underlay_auz()}
-spriteset(gfx_tunnel_roof_entry,		"gfx/railtypes/roof.png")	{template_underground_tunnel_portal()}
+spriteset(gfx_tunnel_roof_SUKTS_concrete,		"gfx/Tunnel Rooves/roof_SUKTS_concrete.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_overlay_SUKTS_concrete,	"gfx/Tunnel Rooves/roof_SUKTS_concrete.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_depot_SUKTS_concrete,				"gfx/Depot/Underground Depot.png")				{template_depot()}
+spriteset(gfx_tunnel_roof_chipsA,				"gfx/Tunnel Rooves/roof_chipsA.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_overlay_chipsA,			"gfx/Tunnel Rooves/roof_chipsA.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_depot_chipsA,						"gfx/Depot/Underground Depot.png")		{template_depot()}
+spriteset(gfx_tunnel_roof_chipsC,				"gfx/Tunnel Rooves/roof_chipsC.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_overlay_chipsC,			"gfx/Tunnel Rooves/roof_chipsC.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_depot_chipsC,						"gfx/Depot/Underground Depot.png")		{template_depot()}
+spriteset(gfx_tunnel_roof_chipsD,				"gfx/Tunnel Rooves/roof_chipsD.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_overlay_chipsD,			"gfx/Tunnel Rooves/roof_chipsD.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_depot_chipsD,						"gfx/Depot/Underground Depot.png")		{template_depot()}
+spriteset(gfx_tunnel_roof_opengfx_grass_temperate,	"gfx/Tunnel Rooves/roof_opengfx_grass.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_roof_opengfx_grass_alpine,		"gfx/Tunnel Rooves/roof_opengfx_grass.png")	{template_underlay_auz_tnl(42)}
+spriteset(gfx_tunnel_roof_opengfx_grass_snow,		"gfx/Tunnel Rooves/roof_opengfx_grass.png")	{template_underlay_auz_tnl(84)}
+spriteset(gfx_tunnel_roof_opengfx_grass_tropical,	"gfx/Tunnel Rooves/roof_opengfx_grass.png")	{template_underlay_auz_tnl(126)}
+spriteset(gfx_tunnel_roof_opengfx_grass_desert,		"gfx/Tunnel Rooves/roof_opengfx_grass.png")	{template_underlay_auz_tnl(168)}
+spriteset(gfx_tunnel_roof_opengfx_plus_grass_temperate,	"gfx/Tunnel Rooves/roof_opengfx_plus_grass.png")	{template_underlay_auz_tnl(0)}
+spriteset(gfx_tunnel_roof_opengfx_plus_grass_alpine,		"gfx/Tunnel Rooves/roof_opengfx_plus_grass.png")	{template_underlay_auz_tnl(42)}
+spriteset(gfx_tunnel_roof_opengfx_plus_grass_snow,			"gfx/Tunnel Rooves/roof_opengfx_plus_grass.png")	{template_underlay_auz_tnl(84)}
+spriteset(gfx_tunnel_roof_opengfx_plus_grass_tropical,		"gfx/Tunnel Rooves/roof_opengfx_plus_grass.png")	{template_underlay_auz_tnl(126)}
+spriteset(gfx_tunnel_roof_opengfx_plus_grass_desert,		"gfx/Tunnel Rooves/roof_opengfx_plus_grass.png")	{template_underlay_auz_tnl(168)}
+
+
+spriteset(gfx_tunnel_overlay_opengfx_grass_temperate,	"gfx/Tunnel Rooves/tunnel_overlay_opengfx_grass.png")	{template_tunnel_overlay_auz(0)}
+spriteset(gfx_tunnel_overlay_opengfx_grass_alpine,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_grass.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_tunnel_overlay_opengfx_grass_snow,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_grass.png")	{template_tunnel_overlay_auz(84)}
+spriteset(gfx_tunnel_overlay_opengfx_grass_tropical,	"gfx/Tunnel Rooves/tunnel_overlay_opengfx_grass.png")	{template_tunnel_overlay_auz(126)}
+spriteset(gfx_tunnel_overlay_opengfx_grass_desert,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_grass.png")	{template_tunnel_overlay_auz(168)}
+spriteset(gfx_tunnel_overlay_opengfx_plus_grass_temperate,	"gfx/Tunnel Rooves/tunnel_overlay_opengfx_plus_grass.png")	{template_tunnel_overlay_auz(0)}
+spriteset(gfx_tunnel_overlay_opengfx_plus_grass_alpine,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_plus_grass.png")	{template_tunnel_overlay_auz(42)}
+spriteset(gfx_tunnel_overlay_opengfx_plus_grass_snow,			"gfx/Tunnel Rooves/tunnel_overlay_opengfx_plus_grass.png")	{template_tunnel_overlay_auz(84)}
+spriteset(gfx_tunnel_overlay_opengfx_plus_grass_tropical,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_plus_grass.png")	{template_tunnel_overlay_auz(126)}
+spriteset(gfx_tunnel_overlay_opengfx_plus_grass_desert,		"gfx/Tunnel Rooves/tunnel_overlay_opengfx_plus_grass.png")	{template_tunnel_overlay_auz(168)}
+
+is_opengfx_plus_loaded = (param["OG+4", 0] % 2 == 0 && param["OG+4", 0] % 8 >= 4) ? 1 : 0;
+
+//Grass "catenary" switches
+
+switch(FEAT_RAILTYPES, SELF, sw_opengfx_plus_arctic_check, param["OG+4", 1]) {
+ 1 : gfx_tunnel_roof_opengfx_plus_grass_temperate;
+ gfx_tunnel_roof_opengfx_plus_grass_alpine;
+}
+switch(FEAT_RAILTYPES, SELF, sw_basic_grass_opengfx_plus, climate) {
+ CLIMATE_ARCTIC : sw_opengfx_plus_arctic_check;
+ CLIMATE_TROPICAL : gfx_tunnel_roof_opengfx_plus_grass_tropical;
+ gfx_tunnel_roof_opengfx_plus_grass_temperate;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_opengfx_plus_grass_overlay, terrain_type) {
+ TILETYPE_NORMAL: sw_basic_grass_opengfx_plus;
+ TILETYPE_DESERT: gfx_tunnel_roof_opengfx_plus_grass_desert;
+ TILETYPE_RAIN_FOREST: gfx_tunnel_roof_opengfx_plus_grass_tropical;
+ TILETYPE_SNOW: gfx_tunnel_roof_opengfx_plus_grass_snow;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_basic_grass_opengfx, climate) {
+ CLIMATE_ARCTIC : gfx_tunnel_roof_opengfx_grass_alpine;
+ CLIMATE_TROPICAL : gfx_tunnel_roof_opengfx_grass_tropical;
+ gfx_tunnel_roof_opengfx_grass_temperate;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_opengfx_grass_overlay, terrain_type) {
+ TILETYPE_NORMAL: sw_basic_grass_opengfx;
+ TILETYPE_DESERT: gfx_tunnel_roof_opengfx_grass_desert;
+ TILETYPE_RAIN_FOREST: gfx_tunnel_roof_opengfx_grass_tropical;
+ TILETYPE_SNOW: gfx_tunnel_roof_opengfx_grass_snow;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_grass_overlay, is_opengfx_plus_loaded) {
+	1: sw_opengfx_plus_grass_overlay;
+	sw_opengfx_grass_overlay;
+}
+
+//Grass "tunnel" switches
+
+switch(FEAT_RAILTYPES, SELF, sw_to_opengfx_plus_arctic_check, param["OG+4", 1]) {
+ 1 : gfx_tunnel_overlay_opengfx_plus_grass_temperate;
+ gfx_tunnel_overlay_opengfx_plus_grass_alpine;
+}
+switch(FEAT_RAILTYPES, SELF, sw_to_basic_grass_opengfx_plus, climate) {
+ CLIMATE_ARCTIC : sw_to_opengfx_plus_arctic_check;
+ CLIMATE_TROPICAL : gfx_tunnel_overlay_opengfx_plus_grass_tropical;
+ gfx_tunnel_overlay_opengfx_plus_grass_temperate;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_to_opengfx_plus_grass_overlay, terrain_type) {
+ TILETYPE_NORMAL: sw_to_basic_grass_opengfx_plus;
+ TILETYPE_DESERT: gfx_tunnel_overlay_opengfx_plus_grass_desert;
+ TILETYPE_RAIN_FOREST: gfx_tunnel_overlay_opengfx_plus_grass_tropical;
+ TILETYPE_SNOW: gfx_tunnel_overlay_opengfx_plus_grass_snow;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_to_basic_grass_opengfx, climate) {
+ CLIMATE_ARCTIC : gfx_tunnel_overlay_opengfx_grass_alpine;
+ CLIMATE_TROPICAL : gfx_tunnel_overlay_opengfx_grass_tropical;
+ gfx_tunnel_overlay_opengfx_grass_temperate;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_to_opengfx_grass_overlay, terrain_type) {
+ TILETYPE_NORMAL: sw_to_basic_grass_opengfx;
+ TILETYPE_DESERT: gfx_tunnel_overlay_opengfx_grass_desert;
+ TILETYPE_RAIN_FOREST: gfx_tunnel_overlay_opengfx_grass_tropical;
+ TILETYPE_SNOW: gfx_tunnel_overlay_opengfx_grass_snow;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_to_grass_overlay, is_opengfx_plus_loaded) {
+	1: sw_to_opengfx_plus_grass_overlay;
+	sw_to_opengfx_grass_overlay;
+}
+
+spriteset(gfx_overlays_TNLA,			"gfx/ELRL/SHAE/overlay_SHAE.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_TNLA_wide,		"gfx/ELRL/SHAE/Underlay_SHAE_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_TNLA,		"gfx/RAIL/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_TNLA,		"gfx/RAIL/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()				}
+
+
+spriteset(gfx_fences_TNLA,				"gfx/RAIL/RAIL/Fences_RAIL.png")		{	template_fences()					}
+spriteset(gfx_depot_TNLA,				"gfx/RAIL/RAIL/Depot_RAIL.png")			{	template_depot()					}
+
+
+
+
+
+
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_TNLA, depot_type){
+	0 : gfx_depot_SUKTS_concrete ;
+	1 : gfx_depot_1 ;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_TNLB, depot_type){
+	0 : gfx_depot_chipsA ;
+	1 : gfx_depot_1 ;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_TNLC, depot_type){
+	0 : gfx_depot_chipsC ;
+	1 : gfx_depot_1 ;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_TNLD, depot_type){
+	0 : gfx_depot_chipsD ;
+	1 : gfx_depot_1 ;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_TNLE, depot_type){
+	0 : gfx_depot_SUKTS_concrete ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_TNLA, fence_number < 1){
+	1 : gfx_fences_TNLA ;
+	gfx_blank ;
+}
+
+
+
+
+
+// Item
+
+if(param[15]){
+
+item(FEAT_RAILTYPES, rail_TNLA) {
+	property {
+		label						: "TNLA" ;
+		name						: string(STR_TNLA_NAME) ;
+		menu_text					: string(STR_TNLA_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 20 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1863,1,1) ;
+		sort_order					: 0 ;
+		speed_limit					: param[16] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: sw_underlay_SDA3 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_TNLA ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_tunnel_roof_SUKTS_concrete;
+        catenary_pylons		: gfx_none_8;
+		tunnel_overlay		: gfx_tunnel_overlay_SUKTS_concrete;
+	}
+}
+/*
+item(FEAT_RAILTYPES, rail_TNLB) {
+	property {
+		label						: "TNLB" ;
+		name						: string(STR_TNLB_NAME) ;
+		menu_text					: string(STR_TNLB_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 20 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1863,1,1) ;
+		sort_order					: 0 ;
+		speed_limit					: param[16] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY43 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_TNLB ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_tunnel_roof_chipsA;
+        catenary_pylons		: gfx_none_8;
+		tunnel_overlay		: gfx_tunnel_overlay_chipsA;
+	}
+}
+*/
+item(FEAT_RAILTYPES, rail_TNLC) {
+	property {
+		label						: "TNLC" ;
+		name						: string(STR_TNLC_NAME) ;
+		menu_text					: string(STR_TNLC_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 20 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1863,1,1) ;
+		sort_order					: 0 ;
+		speed_limit					: param[16] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY23 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_TNLC ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_tunnel_roof_chipsC;
+        catenary_pylons		: gfx_none_8;
+		tunnel_overlay		: gfx_tunnel_overlay_chipsC;
+	}
+}
+/*
+item(FEAT_RAILTYPES, rail_TNLD) {
+	property {
+		label						: "TNLD" ;
+		name						: string(STR_TNLD_NAME) ;
+		menu_text					: string(STR_TNLD_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 20 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1863,1,1) ;
+		sort_order					: 0 ;
+		speed_limit					: param[16] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: gfx_underlay_SY33 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_TNLD ;
+		signals				: sw_signals ;
+        catenary_wire		: gfx_tunnel_roof_chipsD;
+        catenary_pylons		: gfx_none_8;
+		tunnel_overlay		: gfx_tunnel_overlay_chipsD;
+	}
+}*/
+
+item(FEAT_RAILTYPES, rail_TNLE) {
+	property {
+		label						: "TNLE" ;
+		name						: string(STR_TNLE_NAME) ;
+		menu_text					: string(STR_TNLE_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 20 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1863,1,1) ;
+		sort_order					: 0 ;
+		speed_limit					: param[16] mph ;
+		extra_aspects				: signal_elec;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SDA3 ;
+		underlay			: sw_underlay_SDA3 ;
+		bridge_surfaces		: gfx_bridge_tracks_SDA3 ;
+		tunnels				: gfx_tunnel_tracks_SDA3 ;
+		fences				: sw_fences_SAA3 ;
+		depots				: sw_depot_TNLE ;
+		signals				: sw_signals ;
+        catenary_wire		: sw_grass_overlay;
+        catenary_pylons		: gfx_none_8;
+		tunnel_overlay		: sw_to_grass_overlay;
+	}
+}
+
+}
